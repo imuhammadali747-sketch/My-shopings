@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: blue;
+}
+nav h1 { 
+    font-size: 50px;
+    font-family: sans-serif;
+    color: black;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+
+nav img {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+nav img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6f7;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: gray;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+}
+
+/* Chap qism */
+.left {
+    width: 35%;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* O'ng qism */
+.right {
+    width: 65%;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.right h2 {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #ff5a00;
+    color: white;
+    font-size: 16px;
+}
+
+.matn {
+    padding: 10px;
+}
+
+.qisqartma {
+    height: 115px;
+}
+
+
+.boglanishlar {
+    border-radius: 10px;
+    border: 15px solid #f54900;    
+    background: #f54900;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.boglanishlar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
