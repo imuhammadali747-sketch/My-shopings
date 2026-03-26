@@ -10,8 +10,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background: blue;
-    
+    background: blue;  
 }
 nav h1 { 
     font-size: 50px;
