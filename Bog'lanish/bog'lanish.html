@@ -100,7 +100,15 @@
                 <input type="text" name="name" placeholder="Ismingizni kiriting" required>
 
                 <label>Telefon raqamingiz</label>
-                <input type="tel" name="email" placeholder="Telefon raqamingiz kiriting" required>
+                <input type="tel" name="phone" list="phoneList" placeholder="+998 90 123 45 67" required>
+                <datalist id="phoneList">
+                    <option value="+998 90 ">
+                    <option value="+998 91 ">
+                    <option value="+998 93 ">
+                    <option value="+998 97 ">
+                    <option value="+998 98 ">
+                    <option value="+998 20 ">
+                </datalist>
 
                 <label>Xabaringiz</label>
                 <textarea name="message" placeholder="Xabaringizni yozing..." required></textarea>
