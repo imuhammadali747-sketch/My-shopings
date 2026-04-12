@@ -4,132 +4,142 @@
     box-sizing: border-box;
 }
 
-nav {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background: blue;
-}
-nav h1 { 
-    font-size: 50px;
-    font-family: sans-serif;
-    color: black;
+.products {
+    padding: 80px 60px;
+    background: #fff;
+    text-align: center;
 }
 
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+.products h2 {
+    font-size: 42px;
+    color: #0f172a;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
+.sub {
+    margin: 10px 0 50px;
+    color: #475569;
 }
 
-nav ul li {
-    list-style: none;
-}
-
-
-
-nav img {
-    width: 65px;
-    height: 65px;
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-nav img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-}
-
-.boglanishlar {
-    border-radius: 10px;
-    border: 15px solid #f54900;    
-    background: #f54900;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.boglanishlar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-}
-
-.products{
-    padding:80px 60px;
-    background:#fff;
-    text-align:center;
-}
-
-.products h2{
-    font-size:42px;
-    color:#0f172a;
-}
-
-.sub{
-    margin:10px 0 50px;
-    color:#475569;
-}
-
-.product-grid{
-    display:grid;
+.product-grid {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap:25px;
+    gap: 25px;
 }
 
-.product-card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 6px 15px rgba(0,0,0,0.06);
-    position:relative;
-    text-align:left;
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+    position: relative;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
 
-.product-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
+.product-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.p-info{
-    padding:18px;
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.cat{
-    color:#ff4d00;
-    font-size:14px;
+.product-card:hover img {
+    transform: scale(1.1);
 }
 
-.product-card h3{
-    margin:6px 0;
-    color:#0f172a;
+.p-info {
+    padding: 18px;
+}
+
+.cat {
+    color: #ff4d00;
+    font-size: 14px;
+}
+
+.product-card h3 {
+    margin: 6px 0;
+    color: #0f172a;
 }
 
 
-.price{
-    font-weight:bold;
-    font-size:18px;
+.price {
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.price small{
-    color:#64748b;
-    font-weight:normal;
+.price small {
+    color: #64748b;
+    font-weight: normal;
 }
 
-.badge{
-    position:absolute;
-    top:15px;
-    right:15px;
-    background:#ff4d00;
-    color:white;
-    padding:6px 10px;
-    border-radius:8px;
-    font-size:12px;
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff4d00;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
 }
 
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+
+/* TABLET (768px da pastda) */
+@media (max-width: 768px) {
+    .products {
+        padding: 40px 30px;
+    }
+
+    .products h2 {
+        font-size: 32px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* MOBILE (480px da pastda) */
+@media (max-width: 480px) {
+    .products {
+        padding: 20px 15px;
+    }
+
+    .products h2 {
+        font-size: 24px;
+    }
+
+    .sub {
+        margin: 10px 0 30px;
+        font-size: 14px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+
+    .p-info {
+        padding: 15px;
+    }
+
+    .product-card h3 {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+}

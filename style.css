@@ -2,152 +2,180 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-nav {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background: blue;  
-}
-nav h1 { 
-    font-size: 50px;
-    font-family: sans-serif;
-    color: black;
-}
-
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-nav ul li {
-    list-style: none;
-}
-
-nav h1 { 
-    font-size: 60px;
-    font-family: sans-serif;
-    color: black;
-}
-
-nav img {
-    width: 65px;
-    height: 65px;
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-nav img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-}
-
-.boglanishlar {
-    border-radius: 10px;
-    border: 15px solid #f54900;    
-    background: #f54900;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.boglanishlar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
     font-family: Arial, sans-serif;
 }
 
-.hero{
+.hero {
     height: 600px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:60px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
     background: white;
 }
 
-.left{
+.left {
     width: 55%;
 }
 
-.left h1{
-    font-size:60px;
-    line-height:1.1;
-    color:#0f172a;
+.left h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    color: #0f172a;
 }
 
-.left h1 span{
-    color:#ff4d00;
+.left h1 span {
+    color: #ff4d00;
 }
 
-.left p{
-    margin:25px 0;
-    color:#475569;
-    font-size:18px;
-    line-height:1.6;
+.left p {
+    margin: 25px 0;
+    color: #475569;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
-.buttons{
-    display:flex;
-    gap:15px;
-    margin-bottom:30px;
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.btn-orange{
-    background:#ff4d00;
-    color:white;
-    padding:14px 22px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
+.btn-orange {
+    background: linear-gradient(135deg, #ff4d00 0%, #ff6e2d 100%);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(255, 77, 0, 0.3);
+    border: none;
 }
 
-.btn-white{
-    background:white;
-    color:#0f172a;
-    padding:14px 22px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    border:1px solid #ddd;
+.btn-orange:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 77, 0, 0.5);
+    background: linear-gradient(135deg, #ff6e2d 0%, #ff8a42 100%);
 }
 
-.stats{
-    display:flex;
-    gap:60px;
-    border-top:1px solid #e5e7eb;
-    padding-top:25px;
+.btn-white {
+    background: white;
+    color: #1a3a52;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid #1a3a52;
 }
 
-.stats h3{
-    color:#ff4d00;
-    font-size:32px;
+.btn-white:hover {
+    background: #f0f0f0;
+    color: #ff4d00;
+    border-color: #ff4d00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(26, 58, 82, 0.2);
 }
 
-.stats span{
-    color:#475569;
+.stats {
+    display: flex;
+    gap: 60px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 25px;
 }
 
-.right{
-    width:40%;
+.stats h3 {
+    color: #ff4d00;
+    font-size: 32px;
 }
 
-.right img{
-    width:100%;
-    border-radius:20px;
+.stats span {
+    color: #475569;
+}
+
+.right {
+    width: 40%;
+}
+
+.right img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+
+/* TABLET (768px da pastda) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 40px 30px;
+        gap: 40px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .left h1 {
+        font-size: 40px;
+    }
+
+    .buttons {
+        flex-wrap: wrap;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* MOBILE (480px da pastda) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .left h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .left p {
+        font-size: 14px;
+        margin: 15px 0;
+    }
+
+    .btn-orange,
+    .btn-white {
+        padding: 10px 16px;
+        font-size: 12px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stats {
+        padding-top: 15px;
+        gap: 10px;
+    }
+
+    .stats h3 {
+        font-size: 20px;
+    }
+
+    .stats span {
+        font-size: 12px;
+    }
 }
