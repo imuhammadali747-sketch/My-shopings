@@ -100,7 +100,7 @@ header nav img {
     gap: 60px;
     border-top: 1px solid #e5e7eb;
     padding-top: 25px;
-    cursor: pointer;
+    acursor: pointer;
 }
 
 .stats h3 {
