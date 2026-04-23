@@ -5,6 +5,14 @@
     font-family: Arial, sans-serif;
 }
 
+header  nav h1 {
+    cursor: pointer;
+}
+
+header nav img {
+    cursor: pointer;
+}
+
 .hero {
     height: 600px;
     display: flex;
@@ -14,6 +22,8 @@
     background: white;
 }
 
+
+
 .left {
     width: 55%;
 }
@@ -22,10 +32,12 @@
     font-size: 60px;
     line-height: 1.1;
     color: #0f172a;
+    cursor: pointer;
 }
 
 .left h1 span {
     color: #ff4d00;
+    cursor: pointer;
 }
 
 .left p {
@@ -33,6 +45,7 @@
     color: #475569;
     font-size: 18px;
     line-height: 1.6;
+    cursor: pointer;
 }
 
 .buttons {
@@ -87,6 +100,7 @@
     gap: 60px;
     border-top: 1px solid #e5e7eb;
     padding-top: 25px;
+    cursor: pointer;
 }
 
 .stats h3 {
