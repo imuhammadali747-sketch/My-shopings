@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express');
 const nodemailer = require('nodemailer');
 const TelegramBot = require('node-telegram-bot-api');
@@ -86,10 +87,24 @@ app.post('/contact', async (req, res) => {
         let telegramSent = false;
         const telegramTargets = [
             process.env.TELEGRAM_CHANNEL_ID,
-            process.env.TELEGRAM_CHANNEL_USERNAME,
             process.env.TELEGRAM_CHAT_ID,
             process.env.TELEGRAM_GROUP_ID
-        ].filter(Boolean);
+        ].map(target => {
+            if (typeof target !== 'string') {
+                return null;
+            }
+
+            const value = target.trim();
+            if (!value) {
+                return null;
+            }
+
+            if (/^-?\d+$/.test(value)) {
+                return value;
+            }
+
+            return value.startsWith('@') ? value : `@${value}`;
+        }).filter(Boolean);
 
         if (bot && telegramTargets.length > 0) {
             try {
