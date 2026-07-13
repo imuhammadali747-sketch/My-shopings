@@ -116,10 +116,17 @@
 
             const normalizeText = function (value) {
                 return value
+                    .toLowerCase()
                     .normalize('NFKD')
                     .replace(/[\u0300-\u036f]/g, '')
-                    .toLowerCase()
-                    .replace(/[^a-z0-9]/g, '');
+                    .replace(/[ʼ’]/g, "'")
+                    .replace(/[^a-z0-9]/g, '')
+                    .replace(/j/g, 'j')
+                    .replace(/q/g, 'q')
+                    .replace(/o/g, 'o')
+                    .replace(/g/g, 'g')
+                    .replace(/sh/g, 'sh')
+                    .replace(/ch/g, 'ch');
             };
 
             const section = searchInput.closest('.products');
