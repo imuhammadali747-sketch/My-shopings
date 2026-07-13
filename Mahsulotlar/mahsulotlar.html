@@ -58,6 +58,11 @@
         <h2>Bizning Mahsulotlar</h2>
         <p class="sub">Yuqori sifatli qurilish materiallarini eng yaxshi narxlarda</p>
 
+        <div class="search-box">
+            <span class="search-icon">🔎</span>
+            <input type="text" id="productSearch" placeholder="Mahsulot yoki kategoriya bo‘yicha qidiring...">
+        </div>
+
         <div class="product-grid">
 
             <div class="product-card">
@@ -101,6 +106,43 @@
 
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('productSearch');
+            const cards = Array.from(document.querySelectorAll('.product-card'));
+
+            if (!searchInput) return;
+
+            const normalizeText = function (value) {
+                return value
+                    .normalize('NFKD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]/g, '');
+            };
+
+            const section = searchInput.closest('.products');
+            const noResults = document.createElement('div');
+            noResults.className = 'no-results';
+            noResults.textContent = 'Hech qanday mahsulot topilmadi.';
+            section.appendChild(noResults);
+
+            searchInput.addEventListener('input', function () {
+                const query = normalizeText(this.value.trim());
+                let visibleCount = 0;
+
+                cards.forEach(function (card) {
+                    const text = normalizeText(card.textContent);
+                    const isMatch = text.includes(query);
+                    card.style.display = isMatch ? '' : 'none';
+                    if (isMatch) visibleCount++;
+                });
+
+                noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            });
+        });
+    </script>
 
 </body>
 
