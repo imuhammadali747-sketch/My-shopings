@@ -1,5 +1,5 @@
 // Initialize EmailJS
-emailjs.init('YOUR_PUBLIC_KEY'); // Siz bergan key bilan o'zgartiriladi
+emailjs.init('lnc2fEY6PQfKOgvsK');
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             to_email: 'info@qurilish.uz'
         };
 
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        emailjs.send('service_0gqky67', 'template_vrawfna', templateParams)
             .then(function (response) {
                 console.log('Success!', response.status, response.text);
                 alert('Xabar yuborildi! Tez orada biz siz bilan bog\'lanamiz.');
