@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             from_name: formData.get('name'),
             from_phone: formData.get('phone'),
             message: formData.get('message'),
-            to_email: 'info@qurilish.uz'
+            to_email: 'yaxshiniyatstroyhouse2017@gmail.com'
         };
 
         emailjs.send('service_0gqky67', 'template_vrawfna', templateParams)
