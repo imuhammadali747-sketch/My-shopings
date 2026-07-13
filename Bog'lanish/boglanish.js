@@ -1,37 +1,28 @@
+// Initialize EmailJS
+emailjs.init('YOUR_PUBLIC_KEY'); // Siz bergan key bilan o'zgartiriladi
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
 
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
-        // Get form data
         const formData = new FormData(form);
-        const data = {
-            name: formData.get('name'),
-            phone: formData.get('phone'),
-            message: formData.get('message')
+        const templateParams = {
+            from_name: formData.get('name'),
+            from_phone: formData.get('phone'),
+            message: formData.get('message'),
+            to_email: 'info@qurilish.uz'
         };
 
-        // Send POST to Netlify function
-        fetch('/.netlify/functions/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            .then(result => {
-                if (result.success) {
-                    alert('Xabar yuborildi! Email, Telegram va SMS orqali qabul qilindi.');
-                    form.reset();
-                } else {
-                    alert('Xatolik yuz berdi: ' + result.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Xatolik yuz berdi.');
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            .then(function (response) {
+                console.log('Success!', response.status, response.text);
+                alert('Xabar yuborildi! Tez orada biz siz bilan bog\'lanamiz.');
+                form.reset();
+            }, function (error) {
+                console.log('Failed...', error);
+                alert('Xatolik yuz berdi: ' + error.text);
             });
     });
 });
