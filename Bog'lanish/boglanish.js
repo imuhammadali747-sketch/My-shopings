@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
             message: formData.get('message')
         };
 
-        // Send POST to backend
-        fetch('/contact', {
+        // Send POST to Netlify function
+        fetch('/.netlify/functions/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
